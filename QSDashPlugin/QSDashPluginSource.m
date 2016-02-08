@@ -35,16 +35,21 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 		if (![[ds objectForKey:@"isEnabled"] boolValue]) {
 			continue;
 		}
-		NSString *keyword = [ds objectForKey:@"pluginKeyword"];
+		NSString *title = [ds objectForKey:@"docsetName"];
+		// try user-defined keyword
+		NSString *keyword = [[ds objectForKey:@"keyword"] stringByReplacingOccurrencesOfString:@":" withString:@""];
 		if (![keyword length]) {
-			// try user-defined keyword
-			keyword = [[ds objectForKey:@"keyword"] stringByReplacingOccurrencesOfString:@":" withString:@""];
+			// try internally hard-coded keywords
+			keyword = [self keywordForDocset:title];
+		}
+		if (![keyword length]) {
+			// try default keyword
+			keyword = [ds objectForKey:@"suggestedKeyword"];
 		}
 		if (![keyword length]) {
 			// use platform
 			keyword = [ds objectForKey:@"platform"];
 		}
-		NSString *title = [ds objectForKey:@"docsetName"];
 		NSString *path = [ds objectForKey:@"docsetPath"];
 		NSString *ident = [NSString stringWithFormat:@"QSDashDocset:%@", title];
 		newObject = [QSObject makeObjectWithIdentifier:ident];
@@ -83,5 +88,46 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 	}
 	[object setIcon:icon];
 	return YES;
+}
+
+#pragma mark - Helpers
+
+- (NSString *)keywordForDocset:(NSString *)docsetName
+{
+	// these are hard-coded inside Dash
+	// list provided by Kapeli
+	if([docsetName hasPrefix:@"Python 2"])
+	{
+		return @"python2";
+	}
+	else if([docsetName hasPrefix:@"Python 3"])
+	{
+		return @"python3";
+	}
+	else if([docsetName isEqualToString:@"Java SE7"])
+	{
+		return @"java7";
+	}
+	else if([docsetName isEqualToString:@"Java SE6"])
+	{
+		return @"java6";
+	}
+	else if([docsetName isEqualToString:@"Java SE8"])
+	{
+		return @"java8";
+	}
+	else if([docsetName hasPrefix:@"Qt 5"])
+	{
+		return @"qt5";
+	}
+	else if([docsetName hasPrefix:@"Qt 4"])
+	{
+		return @"qt4";
+	}
+	else if([docsetName hasPrefix:@"Cocos3D"])
+	{
+		return @"cocos3d";
+	}
+	return nil;
 }
 @end

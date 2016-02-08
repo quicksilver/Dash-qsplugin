@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D4B2B5201C681646006504A8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4B2B51F1C681646006504A8 /* Info.plist */; };
 		D4BBC2791C680F91006504A8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BBC2781C680F91006504A8 /* Cocoa.framework */; };
 		D4BBC2881C680F91006504A8 /* QSDashPluginAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BBC2871C680F91006504A8 /* QSDashPluginAction.m */; };
 		D4BBC28B1C680F91006504A8 /* QSDashPluginSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BBC28A1C680F91006504A8 /* QSDashPluginSource.m */; };
@@ -100,7 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4BBC28F1C680F91006504A8 /* Build configuration list for PBXNativeTarget "Dash Plugin" */;
 			buildPhases = (
-				D4BBC2701C680F91006504A8 /* ShellScript */,
+				D4BBC2701C680F91006504A8 /* Update Version and Documentation */,
 				D4BBC2711C680F91006504A8 /* Sources */,
 				D4BBC2721C680F91006504A8 /* Frameworks */,
 				D4BBC2731C680F91006504A8 /* Resources */,
@@ -150,20 +149,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4B2B5201C681646006504A8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D4BBC2701C680F91006504A8 /* ShellScript */ = {
+		D4BBC2701C680F91006504A8 /* Update Version and Documentation */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Update Version and Documentation";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;

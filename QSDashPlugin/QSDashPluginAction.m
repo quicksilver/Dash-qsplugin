@@ -14,7 +14,7 @@
 {
 	NSString *dashURLformat = @"dash-plugin://keys=%@&query=%@";
 	NSArray *docsetObjects = [dObject splitObjects];
-	NSString *query = [iObject stringValue];
+	NSString *query = [[iObject stringValue] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
 	NSArray *platforms = [docsetObjects arrayByEnumeratingArrayUsingBlock:^id(QSObject *ds) {
 		return [ds objectForType:QSDashDocsetType];
 	}];

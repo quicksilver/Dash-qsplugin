@@ -6,17 +6,21 @@
 //
 
 #import "QSDashPluginSource.h"
+#import "QSDashPlugin.h"
 
-@implementation QSQSDashPluginSource
+static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist";
+
+@implementation QSDashPluginSource
 
 - (BOOL)indexIsValidFromDate:(NSDate *)indexDate forEntry:(NSDictionary *)theEntry
 {
-	return NO;
-}
-
-- (NSImage *)iconForEntry:(NSDictionary *)dict
-{
-	return nil;
+	NSFileManager *manager = [NSFileManager defaultManager];
+	NSString *fullDashPrefPath = [dashPrefPath stringByStandardizingPath];
+	if (![manager fileExistsAtPath:fullDashPrefPath isDirectory:NULL]) {
+		return YES;
+	}
+	NSDate *modDate = [[manager attributesOfItemAtPath:fullDashPrefPath error:NULL] fileModificationDate];
+	return ([modDate compare:indexDate] == NSOrderedAscending);
 }
 
 - (NSArray *)objectsForEntry:(NSDictionary *)theEntry
@@ -24,11 +28,21 @@
 	NSMutableArray *objects = [NSMutableArray arrayWithCapacity:1];
 	QSObject *newObject;
 
-	newObject = [QSObject objectWithName:@"TestObject"];
-	[newObject setObject:@"" forType:QSQSDashPluginType];
-	[newObject setPrimaryType:QSQSDashPluginType];
-	[objects addObject:newObject];
-
+	NSString *fullDashPrefPath = [dashPrefPath stringByStandardizingPath];
+	NSDictionary *dashPrefs = [NSDictionary dictionaryWithContentsOfFile:fullDashPrefPath];
+	NSArray *docsets = [dashPrefs objectForKey:@"docsets"];
+	for (NSDictionary *ds in docsets) {
+		NSString *platform = [ds objectForKey:@"platform"];
+		NSString *title = [ds objectForKey:@"docsetName"];
+		NSString *path = [ds objectForKey:@"docsetPath"];
+		NSString *ident = [NSString stringWithFormat:@"QSDashDocset:%@", platform];
+		newObject = [QSObject makeObjectWithIdentifier:ident];
+		[newObject setName:title];
+		[newObject setObject:platform forType:QSDashDocsetType];
+		[newObject setPrimaryType:QSDashDocsetType];
+		[newObject setObject:path forMeta:@"docsetPath"];
+		[objects addObject:newObject];
+	}
 	return objects;
 }
 

@@ -7,7 +7,7 @@
 
 #define QSQSDashPluginType @"QSQSDashPluginType"
 
-@interface QSQSDashPluginSource : QSObjectSource
+@interface QSDashPluginSource : QSObjectSource
 {
 }
 @end

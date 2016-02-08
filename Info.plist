@@ -27,17 +27,44 @@
 			<key>actionSelector</key>
 			<string>searchDocSet:query:</string>
 			<key>commandFormat</key>
-			<string>Search for %2$@ in the %1$@ DocSet</string>
+			<string>Search for “%2$@” in the %1$@ DocSet</string>
 			<key>directTypes</key>
 			<array>
 				<string>QSDashDocsetType</string>
 			</array>
 			<key>icon</key>
 			<string>com.kapeli.dashdoc</string>
+			<key>indirectTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
 			<key>name</key>
 			<string>Search DocSet for…</string>
-			<key>validatesObjects</key>
-			<true/>
+			<key>precedence</key>
+			<real>2</real>
+		</dict>
+		<key>QSDashSearchReversed</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSDashPluginActionProvider</string>
+			<key>actionSelector</key>
+			<string>searchDocSet:query:</string>
+			<key>commandFormat</key>
+			<string>Search for “%1$@” in the %2$@ DocSet</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>indirectTypes</key>
+			<array>
+				<string>QSDashDocsetType</string>
+			</array>
+			<key>icon</key>
+			<string>com.kapeli.dashdoc</string>
+			<key>name</key>
+			<string>Find in DocSet…</string>
+			<key>reverseArguments</key>
+			<string>YES</string>
 		</dict>
 	</dict>
 	<key>QSPlugIn</key>

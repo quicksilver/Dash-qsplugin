@@ -48,6 +48,13 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 
 // Object Handler Methods
 
+- (BOOL)loadChildrenForObject:(QSObject *)object
+{
+	NSMutableArray *children = [[QSLib scoredArrayForType:QSDashDocsetType] mutableCopy];
+	[object setChildren:children];
+	return YES;
+}
+
 /*
 - (void)setQuickIconForObject:(QSObject *)object
 {

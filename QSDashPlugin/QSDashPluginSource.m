@@ -55,18 +55,21 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 	return YES;
 }
 
-/*
 - (void)setQuickIconForObject:(QSObject *)object
 {
-	[object setIcon:nil]; // An icon that is either already in memory or easy to load
+	NSImage *docsetIcon = [[NSWorkspace sharedWorkspace] iconForFileType:@"com.apple.xcode.docset"];
+	[object setIcon:docsetIcon];
 }
 
 - (BOOL)loadIconForObject:(QSObject *)object
 {
-	return NO;
-	id data = [object objectForType:QSDashPluginType];
-	[object setIcon:nil];
+	NSString *platform = [object objectForType:QSDashDocsetType];
+	NSBundle *dashBundle = [NSBundle bundleWithIdentifier:@"com.kapeli.dashdoc"];
+	NSImage *icon = [QSResourceManager imageNamed:platform inBundle:dashBundle];
+	if (!icon) {
+		// TODO: check inside the DocSet
+	}
+	[object setIcon:icon];
 	return YES;
 }
-*/
 @end

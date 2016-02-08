@@ -46,7 +46,7 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 		}
 		NSString *title = [ds objectForKey:@"docsetName"];
 		NSString *path = [ds objectForKey:@"docsetPath"];
-		NSString *ident = [NSString stringWithFormat:@"QSDashDocset:%@", keyword];
+		NSString *ident = [NSString stringWithFormat:@"QSDashDocset:%@", title];
 		newObject = [QSObject makeObjectWithIdentifier:ident];
 		[newObject setLabel:title];
 		[newObject setName:[NSString stringWithFormat:@"%@ DocSet", title]];

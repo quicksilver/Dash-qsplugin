@@ -43,6 +43,24 @@
 	return nil;
 }
 
+- (QSObject *)viewDocset:(QSObject *)dObject
+{
+	NSString *dashURLformat = @"dash-plugin://keys=%@";
+	NSArray *docsetObjects = [dObject splitObjects];
+	NSArray *keywords = [docsetObjects arrayByEnumeratingArrayUsingBlock:^id(QSObject *ds) {
+		return [ds objectForType:QSDashDocsetType];
+	}];
+	NSString *joined = [keywords componentsJoinedByString:@","];
+	NSString *dashURLstr = [NSString stringWithFormat:dashURLformat, joined];
+	NSURL *dashURL = [NSURL URLWithString:dashURLstr];
+	if (dashURL) {
+		[[NSWorkspace sharedWorkspace] openURL:dashURL];
+	} else {
+		NSLog(@"error with location: %@", dashURLstr);
+	}
+	return nil;
+}
+
 - (NSArray *)validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)dObject
 {
 	// sort DocSets by use frequency in the third pane

@@ -83,6 +83,25 @@
 			<key>reverseArguments</key>
 			<string>YES</string>
 		</dict>
+		<key>QSDashViewDocset</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSDashPluginActionProvider</string>
+			<key>actionSelector</key>
+			<string>viewDocset:</string>
+			<key>commandFormat</key>
+			<string>View the %1$@ DocSet in Dash</string>
+			<key>directTypes</key>
+			<array>
+				<string>QSDashDocsetType</string>
+			</array>
+			<key>icon</key>
+			<string>com.kapeli.dashdoc</string>
+			<key>name</key>
+			<string>View in Dash</string>
+			<key>precedence</key>
+			<real>1.9</real>
+		</dict>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
@@ -108,6 +127,8 @@
 &lt;dd&gt;With one or more DocSets selected in the first pane, you can enter a search query in the third pane. The search will be limited to the selected DocSet(s).&lt;/dd&gt;
 &lt;dt&gt;Find in DocSet…&lt;/dt&gt;
 &lt;dd&gt;With text entered in the first pane, you can use this action to select one or more DocSets in the third pane and search them for the text. The search will be limited to the selected DocSet(s).&lt;/dd&gt;
+&lt;dt&gt;View in Dash&lt;/dt&gt;
+&lt;dd&gt;Select a DocSet in Dash and show its index page.&lt;/dd&gt;
 &lt;/dl&gt;</string>
 		<key>icon</key>
 		<string>com.kapeli.dashdoc</string>

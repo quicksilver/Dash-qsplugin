@@ -14,3 +14,6 @@ Search DocSet for…
 
 Find in DocSet…
   : With text entered in the first pane, you can use this action to select one or more DocSets in the third pane and search them for the text. The search will be limited to the selected DocSet(s).
+
+View in Dash
+  : Select a DocSet in Dash and show its index page.

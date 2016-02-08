@@ -2,7 +2,7 @@
 
 ## Overview ##
 
-This plug-in adds DocSets from Dash to the catalog to allow quick searches on specific topics.
+This plug-in adds DocSets from [Dash](https://kapeli.com/dash) to the catalog to allow quick searches on specific topics.
 
 ## Actions ##
 

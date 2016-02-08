@@ -99,7 +99,7 @@
 		<key>extendedDescription</key>
 		<string>&lt;h1&gt;Dash Plug-in&lt;/h1&gt;
 &lt;h2&gt;Overview&lt;/h2&gt;
-&lt;p&gt;This plug-in adds DocSets from Dash to the catalog to allow quick searches on specific topics.&lt;/p&gt;
+&lt;p&gt;This plug-in adds DocSets from &lt;a href="https://kapeli.com/dash"&gt;Dash&lt;/a&gt; to the catalog to allow quick searches on specific topics.&lt;/p&gt;
 &lt;h2&gt;Actions&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;Search in Dash&lt;/dt&gt;

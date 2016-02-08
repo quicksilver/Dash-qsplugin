@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		D4B2B51D1C680FDE006504A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4BBC2751C680F91006504A8 /* QSDashPlugin.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QSDashPlugin.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4BBC2751C680F91006504A8 /* Dash Plugin.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dash Plugin.qsplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BBC2781C680F91006504A8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		D4BBC27E1C680F91006504A8 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D4BBC27F1C680F91006504A8 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		D4BBC2761C680F91006504A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4BBC2751C680F91006504A8 /* QSDashPlugin.qsplugin */,
+				D4BBC2751C680F91006504A8 /* Dash Plugin.qsplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,9 +96,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D4BBC2741C680F91006504A8 /* QSDashPlugin */ = {
+		D4BBC2741C680F91006504A8 /* Dash Plugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4BBC28F1C680F91006504A8 /* Build configuration list for PBXNativeTarget "QSDashPlugin" */;
+			buildConfigurationList = D4BBC28F1C680F91006504A8 /* Build configuration list for PBXNativeTarget "Dash Plugin" */;
 			buildPhases = (
 				D4BBC2701C680F91006504A8 /* ShellScript */,
 				D4BBC2711C680F91006504A8 /* Sources */,
@@ -109,9 +109,9 @@
 			);
 			dependencies = (
 			);
-			name = QSDashPlugin;
+			name = "Dash Plugin";
 			productName = QSDashPlugin;
-			productReference = D4BBC2751C680F91006504A8 /* QSDashPlugin.qsplugin */;
+			productReference = D4BBC2751C680F91006504A8 /* Dash Plugin.qsplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -140,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4BBC2741C680F91006504A8 /* QSDashPlugin */,
+				D4BBC2741C680F91006504A8 /* Dash Plugin */,
 			);
 		};
 /* End PBXProject section */
@@ -227,7 +227,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4BBC28F1C680F91006504A8 /* Build configuration list for PBXNativeTarget "QSDashPlugin" */ = {
+		D4BBC28F1C680F91006504A8 /* Build configuration list for PBXNativeTarget "Dash Plugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4BBC2901C680F91006504A8 /* Debug */,

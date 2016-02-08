@@ -105,9 +105,9 @@
 &lt;dt&gt;Search in Dash&lt;/dt&gt;
 &lt;dd&gt;Search Dash for the text in the first pane. Use this for generic searches, like "regular expression" or to specify a more specific search by hand, like "nginx:listen ipv6".&lt;/dd&gt;
 &lt;dt&gt;Search DocSet for…&lt;/dt&gt;
-&lt;dd&gt;With one or more DocSets selected in the first pane, you can enter a search query in the third pane.&lt;/dd&gt;
+&lt;dd&gt;With one or more DocSets selected in the first pane, you can enter a search query in the third pane. The search will be limited to the selected DocSet(s).&lt;/dd&gt;
 &lt;dt&gt;Find in DocSet…&lt;/dt&gt;
-&lt;dd&gt;With text entered in the first pane, you can use this action to select one or more DocSets in the third pane and search them for the text.&lt;/dd&gt;
+&lt;dd&gt;With text entered in the first pane, you can use this action to select one or more DocSets in the third pane and search them for the text. The search will be limited to the selected DocSet(s).&lt;/dd&gt;
 &lt;/dl&gt;</string>
 		<key>icon</key>
 		<string>com.kapeli.dashdoc</string>

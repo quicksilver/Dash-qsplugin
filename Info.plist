@@ -17,7 +17,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>QSActions</key>
 	<dict>
 		<key>QSDashSearch</key>
@@ -41,7 +41,7 @@
 			<key>name</key>
 			<string>Search DocSet for…</string>
 			<key>precedence</key>
-			<real>2</real>
+			<real>2.0</real>
 		</dict>
 		<key>QSDashSearchReversed</key>
 		<dict>
@@ -55,12 +55,12 @@
 			<array>
 				<string>NSStringPboardType</string>
 			</array>
+			<key>icon</key>
+			<string>com.kapeli.dashdoc</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>QSDashDocsetType</string>
 			</array>
-			<key>icon</key>
-			<string>com.kapeli.dashdoc</string>
 			<key>name</key>
 			<string>Find in DocSet…</string>
 			<key>reverseArguments</key>
@@ -80,7 +80,16 @@
 		<key>description</key>
 		<string>Allows quick access to Dash DocSets</string>
 		<key>extendedDescription</key>
-		<string>&lt;h1&gt;Dash&lt;/h1&gt;</string>
+		<string>&lt;h1&gt;Dash Plug-in&lt;/h1&gt;
+&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This plug-in adds DocSets from Dash to the catalog to allow quick searches on specific topics.&lt;/p&gt;
+&lt;h2&gt;Actions&lt;/h2&gt;
+&lt;dl&gt;
+&lt;dt&gt;Search DocSet for…&lt;/dt&gt;
+&lt;dd&gt;With one or more DocSets selected in the first pane, you can enter a search query in the third pane.&lt;/dd&gt;
+&lt;dt&gt;Find in DocSet…&lt;/dt&gt;
+&lt;dd&gt;With text entered in the first pane, you can use this action to select one or more DocSets in the third pane and search them for the text.&lt;/dd&gt;
+&lt;/dl&gt;</string>
 		<key>icon</key>
 		<string>com.kapeli.dashdoc</string>
 		<key>relatedBundles</key>

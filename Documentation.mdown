@@ -1,0 +1,13 @@
+# Dash Plug-in #
+
+## Overview ##
+
+This plug-in adds DocSets from Dash to the catalog to allow quick searches on specific topics.
+
+## Actions ##
+
+Search DocSet for…
+  : With one or more DocSets selected in the first pane, you can enter a search query in the third pane.
+
+Find in DocSet…
+  : With text entered in the first pane, you can use this action to select one or more DocSets in the third pane and search them for the text.

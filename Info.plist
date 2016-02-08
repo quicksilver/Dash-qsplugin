@@ -23,7 +23,7 @@
 		<key>QSDashSearch</key>
 		<dict>
 			<key>actionClass</key>
-			<string>QSQSDashPluginActionProvider</string>
+			<string>QSDashPluginActionProvider</string>
 			<key>actionSelector</key>
 			<string>searchDocSet:query:</string>
 			<key>commandFormat</key>
@@ -80,8 +80,8 @@
 	<dict>
 		<key>QSActionProviders</key>
 		<dict>
-			<key>QSQSDashPluginActionProvider</key>
-			<string>QSQSDashPluginActionProvider</string>
+			<key>QSDashPluginActionProvider</key>
+			<string>QSDashPluginActionProvider</string>
 		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>

@@ -57,7 +57,7 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 - (BOOL)loadIconForObject:(QSObject *)object
 {
 	return NO;
-	id data = [object objectForType:QSQSDashPluginType];
+	id data = [object objectForType:QSDashPluginType];
 	[object setIcon:nil];
 	return YES;
 }

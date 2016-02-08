@@ -5,7 +5,7 @@
 //  Created by Rob McBroom on 2016/02/07.
 //
 
-@interface QSQSDashPluginActionProvider : QSActionProvider
+@interface QSDashPluginActionProvider : QSActionProvider
 {
 }
 @end

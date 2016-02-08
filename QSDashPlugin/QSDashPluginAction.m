@@ -7,7 +7,7 @@
 
 #import "QSDashPluginAction.h"
 
-@implementation QSQSDashPluginActionProvider
+@implementation QSDashPluginActionProvider
 
 - (QSObject *)performActionOnObject:(QSObject *)dObject
 {

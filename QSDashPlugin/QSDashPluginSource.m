@@ -32,6 +32,9 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 	NSDictionary *dashPrefs = [NSDictionary dictionaryWithContentsOfFile:fullDashPrefPath];
 	NSArray *docsets = [dashPrefs objectForKey:@"docsets"];
 	for (NSDictionary *ds in docsets) {
+		if (![[ds objectForKey:@"isEnabled"] boolValue]) {
+			continue;
+		}
 		NSString *platform = [ds objectForKey:@"platform"];
 		NSString *title = [ds objectForKey:@"docsetName"];
 		NSString *path = [ds objectForKey:@"docsetPath"];

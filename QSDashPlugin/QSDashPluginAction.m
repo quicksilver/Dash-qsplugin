@@ -15,10 +15,10 @@
 	NSString *dashURLformat = @"dash-plugin://keys=%@&query=%@";
 	NSArray *docsetObjects = [dObject splitObjects];
 	NSString *query = [[iObject stringValue] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
-	NSArray *platforms = [docsetObjects arrayByEnumeratingArrayUsingBlock:^id(QSObject *ds) {
+	NSArray *keywords = [docsetObjects arrayByEnumeratingArrayUsingBlock:^id(QSObject *ds) {
 		return [ds objectForType:QSDashDocsetType];
 	}];
-	NSString *joined = [platforms componentsJoinedByString:@","];
+	NSString *joined = [keywords componentsJoinedByString:@","];
 	NSString *dashURLstr = [NSString stringWithFormat:dashURLformat, joined, query];
 	NSURL *dashURL = [NSURL URLWithString:dashURLstr];
 	if (dashURL) {

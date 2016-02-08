@@ -35,14 +35,22 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 		if (![[ds objectForKey:@"isEnabled"] boolValue]) {
 			continue;
 		}
-		NSString *platform = [ds objectForKey:@"platform"];
+		NSString *keyword = [ds objectForKey:@"pluginKeyword"];
+		if (![keyword length]) {
+			// try user-defined keyword
+			keyword = [[ds objectForKey:@"keyword"] stringByReplacingOccurrencesOfString:@":" withString:@""];
+		}
+		if (![keyword length]) {
+			// use platform
+			keyword = [ds objectForKey:@"platform"];
+		}
 		NSString *title = [ds objectForKey:@"docsetName"];
 		NSString *path = [ds objectForKey:@"docsetPath"];
-		NSString *ident = [NSString stringWithFormat:@"QSDashDocset:%@", platform];
+		NSString *ident = [NSString stringWithFormat:@"QSDashDocset:%@", keyword];
 		newObject = [QSObject makeObjectWithIdentifier:ident];
 		[newObject setLabel:title];
 		[newObject setName:[NSString stringWithFormat:@"%@ DocSet", title]];
-		[newObject setObject:platform forType:QSDashDocsetType];
+		[newObject setObject:keyword forType:QSDashDocsetType];
 		[newObject setPrimaryType:QSDashDocsetType];
 		[newObject setObject:path forMeta:@"docsetPath"];
 		[objects addObject:newObject];
@@ -67,9 +75,9 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 
 - (BOOL)loadIconForObject:(QSObject *)object
 {
-	NSString *platform = [object objectForType:QSDashDocsetType];
+	NSString *keyword = [object objectForType:QSDashDocsetType];
 	NSBundle *dashBundle = [NSBundle bundleWithIdentifier:@"com.kapeli.dashdoc"];
-	NSImage *icon = [QSResourceManager imageNamed:platform inBundle:dashBundle];
+	NSImage *icon = [QSResourceManager imageNamed:keyword inBundle:dashBundle];
 	if (!icon) {
 		// TODO: check inside the DocSet
 	}

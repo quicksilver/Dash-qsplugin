@@ -6,6 +6,9 @@ This plug-in adds DocSets from Dash to the catalog to allow quick searches on sp
 
 ## Actions ##
 
+Search in Dash
+  : Search Dash for the text in the first pane. Use this for generic searches, like "regular expression" or to specify a more specific search by hand, like "nginx:listen ipv6".
+
 Search DocSet for…
   : With one or more DocSets selected in the first pane, you can enter a search query in the third pane.
 

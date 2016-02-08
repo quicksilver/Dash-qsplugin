@@ -29,6 +29,20 @@
 	return nil;
 }
 
+- (QSObject *)searchDash:(QSObject *)dObject
+{
+	NSString *dashURLformat = @"dash://%@";
+	NSString *query = [[dObject stringValue] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
+	NSString *dashURLstr = [NSString stringWithFormat:dashURLformat, query];
+	NSURL *dashURL = [NSURL URLWithString:dashURLstr];
+	if (dashURL) {
+		[[NSWorkspace sharedWorkspace] openURL:dashURL];
+	} else {
+		NSLog(@"error with location: %@", dashURLstr);
+	}
+	return nil;
+}
+
 - (NSArray *)validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)dObject
 {
 	// sort DocSets by use frequency in the third pane

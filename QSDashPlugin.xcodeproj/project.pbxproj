@@ -202,6 +202,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4BBC2811C680F91006504A8 /* QSPlugIn.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.qsapp.QSDashPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -210,6 +211,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4BBC2811C680F91006504A8 /* QSPlugIn.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.qsapp.QSDashPlugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

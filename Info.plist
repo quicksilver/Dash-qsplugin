@@ -33,7 +33,7 @@
 				<string>QSDashDocsetType</string>
 			</array>
 			<key>icon</key>
-			<string>com.kapeli.dashdoc</string>
+			<string>DashAppIcon</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>NSStringPboardType</string>
@@ -56,7 +56,7 @@
 				<string>NSStringPboardType</string>
 			</array>
 			<key>icon</key>
-			<string>com.kapeli.dashdoc</string>
+			<string>DashAppIcon</string>
 			<key>name</key>
 			<string>Search in Dash</string>
 		</dict>
@@ -73,7 +73,7 @@
 				<string>NSStringPboardType</string>
 			</array>
 			<key>icon</key>
-			<string>com.kapeli.dashdoc</string>
+			<string>DashAppIcon</string>
 			<key>indirectTypes</key>
 			<array>
 				<string>QSDashDocsetType</string>
@@ -96,7 +96,7 @@
 				<string>QSDashDocsetType</string>
 			</array>
 			<key>icon</key>
-			<string>com.kapeli.dashdoc</string>
+			<string>DashAppIcon</string>
 			<key>name</key>
 			<string>View in Dash</string>
 			<key>precedence</key>
@@ -131,10 +131,11 @@
 &lt;dd&gt;Select a DocSet in Dash and show its index page.&lt;/dd&gt;
 &lt;/dl&gt;</string>
 		<key>icon</key>
-		<string>com.kapeli.dashdoc</string>
+		<string>DashAppIcon</string>
 		<key>relatedBundles</key>
 		<array>
 			<string>com.kapeli.dashdoc</string>
+			<string>com.kapeli.dash</string>
 		</array>
 	</dict>
 	<key>QSPresetAdditions</key>
@@ -145,7 +146,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>icon</key>
-			<string>com.kapeli.dashdoc</string>
+			<string>DashAppIcon</string>
 			<key>name</key>
 			<string>Dash DocSets</string>
 			<key>source</key>
@@ -161,6 +162,8 @@
 		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>
+			<key>com.kapeli.dash</key>
+			<string>QSDashPluginSource</string>
 			<key>com.kapeli.dashdoc</key>
 			<string>QSDashPluginSource</string>
 		</dict>
@@ -179,7 +182,7 @@
 			<key>QSDashDocsetType</key>
 			<dict>
 				<key>icon</key>
-				<string>com.kapeli.dashdoc</string>
+				<string>DashAppIcon</string>
 				<key>name</key>
 				<string>Dash DocSets</string>
 			</dict>
@@ -189,6 +192,20 @@
 	<dict>
 		<key>version</key>
 		<string>4012</string>
+	</dict>
+	<key>QSResourceAdditions</key>
+	<dict>
+		<key>DashAppIcon</key>
+		<array>
+			<dict>
+				<key>bundle</key>
+				<string>com.kapeli.dashdoc</string>
+			</dict>
+			<dict>
+				<key>bundle</key>
+				<string>com.kapeli.dash</string>
+			</dict>
+		</array>
 	</dict>
 </dict>
 </plist>

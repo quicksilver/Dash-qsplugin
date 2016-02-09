@@ -6,6 +6,6 @@
 //
 
 @interface QSDashPluginSource : QSObjectSource
-{
-}
+@property (retain) NSString *dashPrefPath;
+@property (retain) NSString *dashBundleID;
 @end

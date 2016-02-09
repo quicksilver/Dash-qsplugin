@@ -8,18 +8,31 @@
 #import "QSDashPluginSource.h"
 #import "QSDashPlugin.h"
 
-static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist";
-
 @implementation QSDashPluginSource
+
+- (instancetype)init
+{
+	self = [super init];
+	if (self) {
+		NSFileManager *dfm = [NSFileManager defaultManager];
+		NSString *pathFormat = @"~/Library/Preferences/%@.plist";
+		self.dashBundleID = @"com.kapeli.dashdoc";
+		self.dashPrefPath = [[NSString stringWithFormat:pathFormat, self.dashBundleID] stringByStandardizingPath];
+		if (![dfm fileExistsAtPath:self.dashPrefPath isDirectory:nil]) {
+			self.dashBundleID = @"com.kapeli.dash";
+			self.dashPrefPath = [[NSString stringWithFormat:pathFormat, self.dashBundleID] stringByStandardizingPath];
+		}
+	}
+	return self;
+}
 
 - (BOOL)indexIsValidFromDate:(NSDate *)indexDate forEntry:(NSDictionary *)theEntry
 {
 	NSFileManager *manager = [NSFileManager defaultManager];
-	NSString *fullDashPrefPath = [dashPrefPath stringByStandardizingPath];
-	if (![manager fileExistsAtPath:fullDashPrefPath isDirectory:NULL]) {
+	if (![manager fileExistsAtPath:[self dashPrefPath] isDirectory:NULL]) {
 		return YES;
 	}
-	NSDate *modDate = [[manager attributesOfItemAtPath:fullDashPrefPath error:NULL] fileModificationDate];
+	NSDate *modDate = [[manager attributesOfItemAtPath:[self dashPrefPath] error:NULL] fileModificationDate];
 	return ([modDate compare:indexDate] == NSOrderedAscending);
 }
 
@@ -28,8 +41,7 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 	NSMutableArray *objects = [NSMutableArray arrayWithCapacity:1];
 	QSObject *newObject;
 
-	NSString *fullDashPrefPath = [dashPrefPath stringByStandardizingPath];
-	NSDictionary *dashPrefs = [NSDictionary dictionaryWithContentsOfFile:fullDashPrefPath];
+	NSDictionary *dashPrefs = [NSDictionary dictionaryWithContentsOfFile:[self dashPrefPath]];
 	NSArray *docsets = [dashPrefs objectForKey:@"docsets"];
 	for (NSDictionary *ds in docsets) {
 		NSString *platform = [ds objectForKey:@"platform"];
@@ -84,7 +96,7 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 - (BOOL)loadIconForObject:(QSObject *)object
 {
 	NSString *platform = [object objectForMeta:@"platform"];
-	NSBundle *dashBundle = [NSBundle bundleWithIdentifier:@"com.kapeli.dashdoc"];
+	NSBundle *dashBundle = [NSBundle bundleWithIdentifier:self.dashBundleID];
 	NSImage *icon = [QSResourceManager imageNamed:platform inBundle:dashBundle];
 	if (!icon) {
 		NSString *docsetPath = [object objectForMeta:@"docsetPath"];

@@ -84,7 +84,20 @@ static NSString *dashPrefPath = @"~/Library/Preferences/com.kapeli.dashdoc.plist
 	NSBundle *dashBundle = [NSBundle bundleWithIdentifier:@"com.kapeli.dashdoc"];
 	NSImage *icon = [QSResourceManager imageNamed:keyword inBundle:dashBundle];
 	if (!icon) {
-		// TODO: check inside the DocSet
+		NSString *docsetPath = [object objectForMeta:@"docsetPath"];
+		NSArray *iconNames = @[@"icon@2x.png", @"icon.png", @"icon.tiff"];
+		NSFileManager *fm = [NSFileManager defaultManager];
+		NSString *iconPath;
+		for (NSString *name in iconNames) {
+			iconPath = [docsetPath stringByAppendingPathComponent:name];
+			if ([fm fileExistsAtPath:iconPath]) {
+				icon = [[NSImage alloc] initWithContentsOfFile:iconPath];
+				break;
+			}
+		}
+	}
+	if (!icon) {
+		return NO;
 	}
 	[object setIcon:icon];
 	return YES;

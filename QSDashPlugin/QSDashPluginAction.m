@@ -13,6 +13,9 @@
 - (QSObject *)searchDocSet:(QSObject *)dObject query:(QSObject *)iObject
 {
 	NSString *dashURLformat = @"dash-plugin://keys=%@&query=%@";
+	NSPasteboard *findPB = [NSPasteboard pasteboardWithName:NSFindPboard];
+	[findPB declareTypes:[NSArray arrayWithObject:NSStringPboardType] owner:nil];
+	[findPB setString:[iObject stringValue] forType:NSStringPboardType];
 	NSArray *docsetObjects = [dObject splitObjects];
 	NSString *query = [[iObject stringValue] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
 	NSArray *keywords = [docsetObjects arrayByEnumeratingArrayUsingBlock:^id(QSObject *ds) {

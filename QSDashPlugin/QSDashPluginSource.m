@@ -52,12 +52,12 @@
 		// try user-defined keyword
 		NSString *keyword = [[ds objectForKey:@"keyword"] stringByReplacingOccurrencesOfString:@":" withString:@""];
 		if (![keyword length]) {
-			// try internally hard-coded keywords
-			keyword = [self keywordForDocset:title];
-		}
-		if (![keyword length]) {
 			// try default keyword
 			keyword = [ds objectForKey:@"suggestedKeyword"];
+		}
+		if (![keyword length]) {
+			// try internally hard-coded keywords
+			keyword = [self keywordForDocset:title];
 		}
 		if (![keyword length]) {
 			// use platform

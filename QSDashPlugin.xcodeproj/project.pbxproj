@@ -101,7 +101,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4BBC28F1C680F91006504A8 /* Build configuration list for PBXNativeTarget "Dash Plugin" */;
 			buildPhases = (
-				D4BBC2701C680F91006504A8 /* Update Version and Documentation */,
 				D4BBC2711C680F91006504A8 /* Sources */,
 				D4BBC2721C680F91006504A8 /* Frameworks */,
 				D4BBC2731C680F91006504A8 /* Resources */,
@@ -126,6 +125,7 @@
 				TargetAttributes = {
 					D4BBC2741C680F91006504A8 = {
 						CreatedOnToolsVersion = 7.2.1;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -134,6 +134,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = D4BBC26B1C680F91006504A8;
@@ -155,23 +156,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		D4BBC2701C680F91006504A8 /* Update Version and Documentation */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Update Version and Documentation";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"$QS_BUILD_ROOT/Tools/bltrversion\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D4BBC2711C680F91006504A8 /* Sources */ = {
